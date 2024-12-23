@@ -2,70 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bingo Call 自選號碼</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(10, 50px);
-      gap: 5px;
-      justify-content: center;
-      margin: 20px;
-    }
-    .cell {
-      width: 50px;
-      height: 50px;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .cell.selected {
-      background-color: #4caf50;
-      color: white;
-    }
-    .controls {
-      margin: 20px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 5px;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聖誕賓果讚</title>
+  <!-- 引入外部 CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Bingo Call 自選號碼</h1>
+  <h1>聖誕賓果讚</h1>
+
+  <!-- 切換開關以選擇布局版本 -->
+  <div class="toggle-container">
+    <span class="toggle-label">版本1：1-75號</span>
+    <label class="switch">
+      <input type="checkbox" id="versionToggle">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">版本2：1-90號</span>
+  </div>
+
   <div class="grid" id="grid"></div>
+  
   <div class="controls">
     <button onclick="resetSelection()">重置</button>
   </div>
-  <script>
-    const grid = document.getElementById("grid");
-    const maxNumber = 90; // 可修改為75或90
 
-    // 建立號碼按鈕
-    for (let i = 1; i <= maxNumber; i++) {
-      const cell = document.createElement("div");
-      cell.className = "cell";
-      cell.textContent = i;
-      cell.onclick = () => cell.classList.toggle("selected");
-      grid.appendChild(cell);
-    }
-
-    // 重置功能
-    function resetSelection() {
-      document.querySelectorAll(".cell.selected").forEach(cell => {
-        cell.classList.remove("selected");
-      });
-    }
-  </script>
+  <!-- 引入外部 JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
