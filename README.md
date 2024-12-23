@@ -25,7 +25,7 @@
 1. **克隆倉庫**
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Dice2076/bingo-call.git
    ```
 
 2. **進入專案目錄**
