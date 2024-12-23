@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Call 自選號碼</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 50px);
+      gap: 5px;
+      justify-content: center;
+      margin: 20px;
+    }
+    .cell {
+      width: 50px;
+      height: 50px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .cell.selected {
+      background-color: #4caf50;
+      color: white;
+    }
+    .controls {
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bingo Call 自選號碼</h1>
+  <div class="grid" id="grid"></div>
+  <div class="controls">
+    <button onclick="resetSelection()">重置</button>
+  </div>
+  <script>
+    const grid = document.getElementById("grid");
+    const maxNumber = 90; // 可修改為75或90
+
+    // 建立號碼按鈕
+    for (let i = 1; i <= maxNumber; i++) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      cell.textContent = i;
+      cell.onclick = () => cell.classList.toggle("selected");
+      grid.appendChild(cell);
+    }
+
+    // 重置功能
+    function resetSelection() {
+      document.querySelectorAll(".cell.selected").forEach(cell => {
+        cell.classList.remove("selected");
+      });
+    }
+  </script>
+</body>
+</html>
