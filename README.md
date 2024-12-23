@@ -109,7 +109,7 @@ bingo-call/
 
 MIT License
 
-© [您的名字或組織]
+© Dice2076
 
 ```
 
